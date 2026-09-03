@@ -62,3 +62,65 @@ Quantum Communication: Classical Information → Bits → Quantum Encoder → Qu
 
 
 
+
+
+ENGLISH：
+
+MY THINKING ABOUT THIS
+Classical physical systems: the states are very definite, such as velocity, time, etc. At the physical transmission layer, we map information into bits, 0 and 1, and at every moment, 0 and 1 are definite.
+Therefore, in traditional communication, we map information into bits, then perform modulation, transmission, decoding, and so on. Bits are abstract representations of information; physical states such as voltage, current, light, and electromagnetic waves are responsible for carrying these bits. For example, in the simplest digital circuit, we can define:
+0 {Low Voltage}
+1 {High Voltage}
+Quantum Rules
+(If the following rules are satisfied, physical → quantum)
+
+1. Superposition
+   (It is neither 0 nor 1, but a kind of superposition state of quantum information.)
+   A quantum state can be a linear combination of multiple basis states:
+   |ψ⟩ = α|0⟩ + β|1⟩
+
+2. Probabilistic Measurement
+   (Only at the moment of measurement can the state be determined as 0 or 1.)
+   A definite result is obtained only when measurement is performed:
+   P(0) = |α|²
+   P(1) = |β|²
+
+3. Measurement Changes the Quantum State
+   (During measurement, the result becomes 1 or 0, so the original superposition state becomes 0 or 1.)
+   For example, if the measurement result is 0, the original superposition state becomes:
+   |0⟩
+   If the measurement result is 1, it becomes:
+   |1⟩
+   This is also one of the foundations that allows QKD to detect eavesdropping.
+
+4. Unitary Evolution
+   (Before measurement, the system remains in a quantum state, and this state evolves according to the following rule. This is also why it cannot be copied.)
+   In an ideal closed quantum system, the quantum state evolves according to a unitary transformation:
+   |ψ'⟩ = U|ψ⟩
+   where U is a unitary operator.
+
+5. Entanglement
+   (Multiple quantum systems can become entangled, so unlike traditional communication where 0 and 1 are clearly separated, quantum states cannot be separated during entanglement. If they are not entangled, they can be separated.)
+   (The number of quantum systems depends on how we design them. It can be 4 qubits or 1 qubit.)
+   Multiple quantum systems can form a joint quantum state that cannot be decomposed into independent states, for example:
+   |Φ+⟩ = 1/√2 (|00⟩ + |11⟩)
+   This means that two qubits form an entangled state.
+
+6. No-Cloning Theorem
+   (Because the state continuously undergoes linear evolution, it cannot be cloned. There is no universal quantum operation that can clone them. Quantum mechanics only allows linear evolution, while “turning one unknown state into two identical states” requires a nonlinear transformation.)
+   An arbitrary unknown quantum state cannot be perfectly copied.
+   There is no universal quantum operation that can implement the following transformation for every unknown quantum state |ψ⟩:
+   |ψ⟩|0⟩ → |ψ⟩|ψ⟩
+
+If the above rules are satisfied, physical information can become quantum information. Therefore, a quantum encoder follows these rules to encode traditional physical information (bits) into quantum states (each 0 or 1 is uncertain).
+Traditional Communication Link
+Traditional Communication: Classical Information → Bits → Encoder → Modulation → Classical Channel → Received Signal → Demodulation/Decoder → Recovered Information
+Quantum Communication Link
+Quantum Communication: Classical Information → Bits → Quantum Encoder → Quantum State → Quantum Channel → Noisy Quantum State → Measurement → Decoder → Recovered Information
+
+
+
+
+
+
+

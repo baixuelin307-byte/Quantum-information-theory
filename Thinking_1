@@ -9,8 +9,8 @@ MY THINKING ABOUT this
 1 {高电压}
 
 量子规律：
-
-1. 叠加（Superposition）（不是0也不是1，不知道是什么，因为一直在演变直到测量的时候才能确定）
+（满足以下规律，物理 to 量子）
+1. 叠加（Superposition）（不是0也不是1,量子的一种叠加态）
 量子态可以同时是多个基态的线性组合：
 
 |ψ⟩ = α|0⟩ + β|1⟩     
@@ -39,16 +39,26 @@ P(1) = |β|²
 
 其中 U 是幺正算子（Unitary Operator）。
 
-5. 纠缠（Entanglement）（多个量子系统会产生纠缠所以不想传统通信那样0，1很分明，量子态期间无法拆分）（量子系统有多少个取决于你怎么设计，可以4qubit，也可以1qubit） 
+5. 纠缠（Entanglement）（多个量子系统可以产生纠缠所以不想传统通信那样0，1很分明，量子态期间无法拆分，不纠缠可以拆分）（量子系统有多少个取决于你怎么设计，可以4qubit，也可以1qubit） 
 多个量子系统可以形成无法拆分为各自独立状态的联合量子态，例如：
 
 |Φ+⟩ = 1/√2 (|00⟩ + |11⟩)
 
 这表示两个 qubit 形成了纠缠态。
 
-6. 不可克隆（No-Cloning Theorem）（一直在演化所以不可以被克隆，不存在一个通用的量子操作可以克隆他们） 
+6. 不可克隆（No-Cloning Theorem）（一直在线性演化所以不可以被克隆，不存在一个通用的量子操作可以克隆他们，量子力学只允许线性演化，而“把一个未知状态变成两份相同状态”需要的是一种非线性变换。） 
 任意未知量子态不能被完美复制。
 
 不存在一个通用的量子操作，可以对所有未知量子态 |ψ⟩ 实现：
 
 |ψ⟩|0⟩ → |ψ⟩|ψ⟩
+
+满足以上规律·物理信息可以变成量子信息，所以quantum encoder根据这些规律把传统物理信息（bit）编码成为量子态（每个01都不确定）
+
+传统通信链路：
+Traditional Communication: Classical Information → Bits → Encoder → Modulation → Classical Channel → Received Signal → Demodulation/Decoder → Recovered Information
+量子通信链路：
+Quantum Communication: Classical Information → Bits → Quantum Encoder → Quantum State → Quantum Channel → Noisy Quantum State → Measurement → Decoder → Recovered Information
+
+
+

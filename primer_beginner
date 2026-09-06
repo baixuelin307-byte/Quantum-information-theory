@@ -1,0 +1,21 @@
+what is Qubit？
+  1:bit：操作性的角度理解它，也就是把 bit 看成：
+                    一个能够存储 0 或 1，并且可以把其中的信息读取出来的系统。
+         信息角度去理解的话就是我们可以把物理信息看作01的比特组合去表达不同的信息！ 整个01群组就是一个系统用来存储信息的，并且我们读取和修改这些信息通过01的变化（ex：通过not device 修改bit 信息可以）
+
+  2:A simple analog model of information：zhege mo xing buxiangshi shangmiande shuzi bit, womenzaizhege moxing limian keyi lianxuquzhi (0.1265,0.7895....) buzaishidanchunde 01.    
+    analong set device : u can set it be any value between 0-1
+    analong read devive: u can read those information 
+    analong transformation: we can change some values by function then output, of course, this value also in 0-1
+    
+  3: A simple probabilistic digital model of information
+     这个是概率模型，bit的真实状态还是0，1.  但是在过程中我们用概率来描述它有多大的概率是0，有多大的概率是1.
+        EX：P(0)=0.3,p(1)=0.7
+        我们可以写成：(0.3
+                      0.7)向量表示
+
+   4：A simple quantum model of information
+         那么关于量子bit是怎么表达的呢？？ 像2的analong 信息还是 3的概率信息
+         实际上both not
+      量子bit是完全不同于其他信息的，不过把他和2，3比较还是有意义的
+      量子bit（qubit） 对于0，1是用概率幅来描述： 

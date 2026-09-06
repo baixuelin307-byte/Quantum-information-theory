@@ -1,5 +1,6 @@
 3.1:  Notation for qubits (and higher dimensional analogues)用于表示 qubit（以及更高维类似量子系统）的符号记法
   
+（two versions Eng and Chinese）
 
 先回顾一下，qubit 的状态可以写成概率幅向量：
 

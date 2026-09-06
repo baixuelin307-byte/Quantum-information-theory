@@ -1,0 +1,68 @@
+what is Qubit？
+  1:bit：操作性的角度理解它，也就是把 bit 看成：
+                    一个能够存储 0 或 1，并且可以把其中的信息读取出来的系统。
+         信息角度去理解的话就是我们可以把物理信息看作01的比特组合去表达不同的信息！ 整个01群组就是一个系统用来存储信息的，并且我们读取和修改这些信息通过01的变化（ex：通过not device 修改bit 信息可以）
+
+  2:A simple analog model of information：zhege mo xing buxiangshi shangmiande shuzi bit, womenzaizhege moxing limian keyi lianxuquzhi (0.1265,0.7895....) buzaishidanchunde 01.    
+    analong set device : u can set it be any value between 0-1
+    analong read devive: u can read those information 
+    analong transformation: we can change some values by function then output, of course, this value also in 0-1
+    
+  3: A simple probabilistic digital model of information
+     这个是概率模型，bit的真实状态还是0，1.  但是在过程中我们用概率来描述它有多大的概率是0，有多大的概率是1.
+        EX：P(0)=0.3,p(1)=0.7
+        我们可以写成：(0.3
+                      0.7)向量表示
+
+   4：A simple quantum model of information
+      量子bit是完全不同于其他信息的，不过把他和2，3比较还是有意义的
+      量子bit（qubit） 对于0，1是用概率幅来描述：   α₀：有多少的概率幅是0，有多少的概率幅为1.
+      那么概率幅究竟是什么：概率幅比普通概率多一个很重要的信息：相位（phase）：这个在这里表示不同的角度关系比如同一个bit有可能为1，有可能是0，描述同一个bit的两种概率幅的角度关系。 多qubit系统的话会有更复杂的相位关系
+
+                    概率幅向量：
+
+                               [α₀
+                                α₁] ∈ C²
+
+           这个向量的欧几里得长度为 1，因此它是一个单位向量（unit vector）。把两个概率幅分别取模平方以后，得到测量为 0 和测量为 1 的概率；这两个概率加起来必须等于 1。
+
+                |α₀|² + |α₁|² = 1
+
+            |α₀|²：有多少的概率是0，|α₁|²有多少的概率为1.
+
+
+             概率幅 α₀ 和 α₁ 都是复数，它们可以表示为：
+
+            α₀ = sin(θ)
+            α₁ = e^(iφ) cos(θ)
+
+            也就是说，可以用两个角度 θ 和 φ 来描述 qubit 的状态。
+
+            θ：主要决定 |0⟩ 和 |1⟩ 两部分的大小比例。
+
+            φ：决定 |0⟩ 和 |1⟩ 两部分之间的相对相位。
+            i 是虚数单位，满足： i² = -1
+            qubit 的状态可以写成：
+
+            |ψ⟩ = sin(θ)|0⟩ + e^(iφ)cos(θ)|1⟩  ： 这个是表达当前这一个qubit我们可以写成的样子 测量的时候才能确定是0，1
+
+
+
+
+
+
+
+
+
+
+
+
+
+         
+
+
+
+
+
+
+

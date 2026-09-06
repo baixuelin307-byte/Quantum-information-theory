@@ -132,6 +132,196 @@ Pauli-Y 门
 → 信息原则上仍然保留，可以通过逆操作恢复->测量！ 
 
 
+3.4 更深入地理解测量
+
+
+假设我们的 qubit 处于某个状态：
+
+|ψ⟩ = α₀|0⟩ + α₁|1⟩ = [α₀  α₁]ᵀ
+
+其中：
+
+|α₀|² + |α₁|² = 1
+
+在进行测量之前，量子算法通常会先通过一系列量子操作对这个 qubit 进行处理，使我们想要的信息尽可能体现在测量结果 0 或 1 上。
+
+最后在计算基 {|0⟩, |1⟩} 上测量：
+
+以概率 |α₀|²，测量结果为 0，并且量子态坍缩到 |0⟩。
+
+以概率 |α₁|²，测量结果为 1，并且量子态坍缩到 |1⟩。
+
+也就是说：
+
+量子态 → 量子算法/量子操作处理 → 测量 → 得到经典 bit 0 或 1
+
+注意：量子算法并不是一定先把量子态“确定地变成 0 或 1”，而是先改变概率幅和相位，使目标答案在最终测量时具有更高的概率被得到。
+
+
+
+
+
+
+3.1: Notation for qubits (and higher dimensional analogues)
+
+Notation used to represent qubits and higher-dimensional quantum systems.
+
+First, recall that the state of a qubit can be written as a probability amplitude vector:
+
+[α₀
+ α₁] ∈ C²
+
+and it is a unit vector.
+
+In quantum information, instead of directly writing an ordinary column vector, we usually write:
+
+|ψ⟩
+
+This notation is called:
+
+bra-ket notation (Dirac notation).
+
+---
+
+### 1. What is a ket?
+
+|ψ⟩
+
+is called a ket.
+
+For a single qubit:
+
+|ψ⟩ = α₀|0⟩ + α₁|1⟩
+
+which is equivalent to:
+
+|ψ⟩ = [α₀
+       α₁]
+
+where:
+
+|0⟩ = [1
+       0]
+
+|1⟩ = [0
+       1]
+
+Therefore:
+
+α₀|0⟩ + α₁|1⟩ = [α₀
+                    α₁]
+
+Here:
+
+|0⟩ and |1⟩
+
+are called computational basis states.
+
+The state:
+
+α₀|0⟩ + α₁|1⟩
+
+is called a superposition.
+
+### 2. Higher-dimensional systems
+
+If the system is not a qubit, but a d-dimensional quantum system, then:
+
+|ψ⟩ = [α₀  α₁  ...  α_(d-1)]ᵀ
+
+and it must satisfy:
+
+||ψ|| = √(|α₀|² + |α₁|² + ... + |α_(d-1)|²) = 1
+
+That is:
+
+The squared magnitudes of all probability amplitudes, which correspond to probabilities, must add up to 1.
+
+Sometimes, to reduce clutter, we write a state such as:
+
+1/√2 |0⟩ + 1/√2 |1⟩
+
+simply as:
+
+|0⟩ + |1⟩
+
+More generally, we can use a non-zero vector that is not normalized to represent a quantum state. In this case, we use the normalization convention: an unnormalized state vector is understood to be divided by its own norm.
+
+An unnormalized |ψ⟩ is interpreted as the quantum state:
+
+|ψ⟩ / |||ψ⟩||
+
+
+3.3 Summary of unitary operations
+
+The evolution of a quantum state is usually written as:
+
+|ψ'⟩ = U|ψ⟩
+
+where U is a unitary matrix.
+
+A unitary matrix has three equivalent properties:
+
+1. It preserves inner products:
+   After quantum states are transformed by U, the angular relationship between them remains unchanged.
+
+2. Its rows and columns are orthonormal:
+   Different vectors have inner product 0, and each vector has length 1.
+
+3. It satisfies:
+
+   U*U = I
+
+   where U* is the conjugate transpose of U, and I is the identity matrix.
+
+Common unitary operations include:
+
+Hadamard gate H
+Pauli-X gate: bit flip, |0⟩ ↔ |1⟩
+Pauli-Z gate: phase flip
+Pauli-Y gate
+Rotation matrix Rθ
+
+Core idea:
+
+A unitary operation transforms one valid quantum state into another valid quantum state, while preserving the vector length and the inner-product relationship between quantum states.
+
+Classical bit
+→ encoded into a quantum state
+→ undergoes unitary evolution U
+→ the probability amplitudes / phases / representation of the quantum state change
+→ the information is, in principle, still preserved and can be recovered through an inverse operation
+→ measurement
+
+
+3.4 A closer look at measurement
+
+Suppose our qubit is in the state:
+
+|ψ⟩ = α₀|0⟩ + α₁|1⟩ = [α₀  α₁]ᵀ
+
+where:
+
+|α₀|² + |α₁|² = 1
+
+Before measurement, a quantum algorithm usually applies a series of quantum operations to the qubit so that the information we want is reflected as strongly as possible in the final measurement result 0 or 1.
+
+Finally, we measure in the computational basis {|0⟩, |1⟩}:
+
+With probability |α₀|², the measurement result is 0, and the quantum state collapses to |0⟩.
+
+With probability |α₁|², the measurement result is 1, and the quantum state collapses to |1⟩.
+
+That is:
+
+Quantum state
+→ quantum algorithm / quantum operations
+→ measurement
+→ obtain the classical bit 0 or 1
+
+Note:
+
+A quantum algorithm does not necessarily first turn the quantum state deterministically into 0 or 1. Instead, it changes the probability amplitudes and phases so that the desired answer has a higher probability of being obtained in the final measurement.
 
 
 

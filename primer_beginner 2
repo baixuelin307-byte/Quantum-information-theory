@@ -3,7 +3,7 @@ what is Qubit？
                     一个能够存储 0 或 1，并且可以把其中的信息读取出来的系统。
          信息角度去理解的话就是我们可以把物理信息看作01的比特组合去表达不同的信息！ 整个01群组就是一个系统用来存储信息的，并且我们读取和修改这些信息通过01的变化（ex：通过not device 修改bit 信息可以）
 
-  2:A simple analog model of information：zhege mo xing buxiangshi shangmiande shuzi bit, womenzaizhege moxing limian keyi lianxuquzhi (0.1265,0.7895....) buzaishidanchunde 01.    
+  2:A simple analog model of information： 这个模型不像上面的数字 bit。在这个模型里面，我们可以连续取值，例如 0.1265、0.7895……，不再是单纯的 0 和 1。    
     analong set device : u can set it be any value between 0-1
     analong read devive: u can read those information 
     analong transformation: we can change some values by function then output, of course, this value also in 0-1
@@ -49,7 +49,56 @@ what is Qubit？
 
 
 
+What is Qubit？
 
+1: bit：Understand it from an operational perspective, that is, regard a bit as:
+A system that can store 0 or 1, and from which the information can be read out.
+From the perspective of information, we can regard physical information as combinations of 0 and 1 bits to represent different information! The whole group of 0s and 1s is a system used to store information, and we read and modify this information through changes in 0 and 1. (ex: we can modify bit information through a NOT device)
+
+2: A simple analog model of information： This model is different from the digital bit above. In this model, we can take continuous values, for example 0.1265, 0.7895..., instead of only simple 0 and 1.
+analong set device : u can set it be any value between 0-1
+analong read devive: u can read those information
+analong transformation: we can change some values by function then output, of course, this value also in 0-1
+
+3: A simple probabilistic digital model of information
+This is a probabilistic model. The real state of the bit is still 0 or 1. But during the process, we use probability to describe how likely it is to be 0 and how likely it is to be 1.
+EX：P(0)=0.3,p(1)=0.7
+We can write it as the vector:
+(0.3
+ 0.7)
+
+4：A simple quantum model of information
+A quantum bit is completely different from the other types of information, but it is still meaningful to compare it with 2 and 3.
+For 0 and 1, a quantum bit（qubit）uses probability amplitudes to describe them: α₀: how much probability amplitude corresponds to 0, and how much probability amplitude corresponds to 1.
+So what exactly is probability amplitude? Compared with ordinary probability, probability amplitude contains one very important additional piece of information: phase. Here, phase represents different angular relationships. For example, for the same bit, it may be 1 or it may be 0, and phase describes the angular relationship between the two probability amplitudes of the same bit. In a multi-qubit system, there will be more complicated phase relationships.
+
+                Probability amplitude vector:
+
+                           [α₀
+                            α₁] ∈ C²
+
+       The Euclidean length of this vector is 1, so it is a unit vector. After taking the squared magnitude of the two probability amplitudes, we obtain the probability of measuring 0 and the probability of measuring 1; these two probabilities must add up to 1.
+
+            |α₀|² + |α₁|² = 1
+
+        |α₀|²: the probability of 0, |α₁|²: the probability of 1.
+
+
+         The probability amplitudes α₀ and α₁ are both complex numbers, and they can be written as:
+
+        α₀ = sin(θ)
+        α₁ = e^(iφ) cos(θ)
+
+        That is, we can use two angles θ and φ to describe the state of a qubit.
+
+        θ: mainly determines the size ratio of the |0⟩ and |1⟩ components.
+
+        φ: determines the relative phase between the |0⟩ and |1⟩ components.
+        i is the imaginary unit, satisfying: i² = -1
+
+        The state of a qubit can be written as:
+
+        |ψ⟩ = sin(θ)|0⟩ + e^(iφ)cos(θ)|1⟩  : This represents the current state of this qubit. Only when we measure it can we determine whether the result is 0 or 1.
 
 
 

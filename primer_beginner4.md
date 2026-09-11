@@ -4,7 +4,7 @@
    1:   EX： $|+\rangle = \frac{1}{\sqrt{2}}|0\rangle + \frac{1}{\sqrt{2}}|1\rangle$
              $|-\rangle = \frac{1}{\sqrt{2}}|0\rangle - \frac{1}{\sqrt{2}}|1\rangle$
              这个例子中只有 plus 和 minus state 这两个都是属于正交态因为 |+\rangle-\rangle=0
-             <img width="218" height="205" alt="image" src="https://github.com/user-attachments/assets/ec1b9ad3-c5fd-4dde-8204-226d64211570" />
+<img width="218" height="205" alt="image" src="https://github.com/user-attachments/assets/ec1b9ad3-c5fd-4dde-8204-226d64211570" />
              在二维的横截面上面不同的符号代表的方向 
              |1\rangle向上
              |0\rangle向右

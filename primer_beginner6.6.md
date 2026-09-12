@@ -1,4 +1,4 @@
-Local Unitary Operation 在多 Qubit 系统中的表示
+6.6 Local Unitary Operation 在多 Qubit 系统中的表示
 
 1. 基本概念
 

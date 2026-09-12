@@ -52,7 +52,7 @@ p000, p001, ...
 
 3. 书中的反例
 
-书中给出了一个 3-qubit state：
+例如一个 3-qubit state：
 
 [ 1/√8
  -1/√8
@@ -84,7 +84,7 @@ p000, p001, ...
 
 quantum subsystem 不能通过“直接把 amplitudes 相加”得到。
 
-4. 如果只想求测量概率分布
+4. 如果只想求 Subsystem 的测量概率分布
 
 如果我们只想知道某个 subsystem 的 measurement probability distribution（测量概率分布），可以先对 amplitude 取模平方，再对不关心的 qubits 求和。
 
@@ -114,7 +114,7 @@ probability amplitude α
         ↓
 得到 subsystem 的测量概率分布
 
-也就是说：
+所以：
 
 如果只是求“测量时得到 0 或 1 的概率”，先取模平方，再求和即可。
 
@@ -161,7 +161,7 @@ partial trace
         ↓
 得到目标 subsystem 的 density matrix
 
-可以写成：
+写成：
 
 ρA = TrB(ρAB)
 
@@ -172,7 +172,128 @@ B   = 不关心的 subsystem
 A   = 我们关心的 subsystem
 ρA  = A 的完整 quantum state
 
-7. 和 Classical Subsystem 的区别
+所以：
+
+density matrix + partial trace 主要用于完整表达 subsystem 的量子态，而不是单纯求概率分布。
+
+7. Subsystem 上的 Quantum Operation
+
+量子操作也可以只作用在某个 subsystem 上。
+
+例如 3-qubit system 中，一个 unitary operation U 只作用在第一个 qubit：
+
+q1 → U
+q2 → 不变
+q3 → 不变
+
+从整个 3-qubit system 来看，这个操作写成：
+
+U ⊗ I ⊗ I
+
+其中：
+
+U = 作用在第一个 qubit 上的 unitary operation
+I = identity operation
+
+也就是说：
+
+即使一个 gate 只作用在部分 qubits 上，从整体系统来看，它仍然必须被理解为整个 Hilbert space 上的 operation。
+
+8. Quantum Gate 仍然要满足 Unitary Evolution
+
+对于封闭量子系统中的 quantum gate，状态改变必须满足：
+
+unitary evolution
+
+例如：
+
+|ψ'> = (U ⊗ I ⊗ I)|ψ>
+
+其中 U 必须满足：
+
+U†U = I
+
+这样可以保证：
+
+||ψ'||² = 1
+
+也就是总概率仍然保持为 1。
+
+因此：
+
+量子态改变
+   ↓
+不能随便改变
+   ↓
+通过 unitary operation 演化
+   ↓
+保持 normalization
+
+即使 operation 只作用在 subsystem 上，整体依旧要满足 unitary evolution。
+
+9. 多个 Local Operations
+
+不同的 operations 可以作用在不同的 qubits 上。
+
+例如：
+
+U → 第一个 qubit
+V → 第二、第三个 qubit
+W → 第一、第二个 qubit
+
+示意：
+
+time →
+
+q1 ── U ───────── W ──
+q2 ─────── V ──── W ──
+q3 ─────── V ─────────
+
+这些都属于 local operations（局部操作）。
+
+虽然它们只作用在部分 qubits 上，但从整个系统角度看，每一步都对应整个系统上的 unitary evolution。
+
+10. Quantum Circuit
+
+把不同的 unitary operations 按时间顺序作用在不同 qubits 上，就形成了：
+
+quantum circuit
+
+在 quantum circuit 中：
+
+横线 = qubit
+方框 = quantum gate / unitary operation
+从左到右 = 时间演化
+
+例如：
+
+time →
+
+q1 ── U ─────────
+q2 ─────── V ────
+q3 ─────── V ────
+
+11. 两种理解 Quantum Circuit 的方式
+
+方式一：qubit 沿 wire 流动
+
+可以把它想象成：
+
+qubit ── U ── V ── W ──>
+
+qubit 从左往右经过不同 quantum gates，状态不断发生变化。
+
+方式二：横轴表示时间
+
+更准确的理解是：
+
+horizontal axis = time
+
+qubit 并不是物理上沿着线移动，而是：
+
+随着时间向右推进，在不同时间点对 qubits 施加不同的 quantum operations。
+
+12. 和 Classical Subsystem 的区别
 
 Classical system
 
@@ -187,13 +308,7 @@ subsystem probability distribution
 P(b1 = 0)
 = p000 + p001 + p010 + p011
 
-Quantum system
-
-不能直接：
-
-amplitude 求和
-
-如果只求测量概率：
+Quantum system：只求测量概率
 
 amplitude
     ↓
@@ -205,7 +320,7 @@ probability
     ↓
 measurement probability distribution
 
-如果要完整描述 subsystem：
+Quantum system：完整描述 Subsystem
 
 整体 quantum state
     ↓
@@ -215,32 +330,51 @@ partial trace
     ↓
 subsystem density matrix
 
-8. 核心总结
+Quantum system：对 Subsystem 施加操作
+
+local quantum gate
+    ↓
+扩展到整个系统
+    ↓
+例如 U ⊗ I ⊗ I
+    ↓
+整体仍满足 unitary evolution
+
+13. 核心总结
 
 n-qubit system
 │
-├── 整体状态由 amplitudes 表示
+├── 整体状态
+│   └── 用 probability amplitudes 表示
 │
-│   α000, α001, ...
+├── probability amplitude
+│   └── P(x) = |αx|²
 │
-├── amplitude 不是 probability
+├── subsystem 的测量概率
+│   └── |α|² 后，对其他 qubits 求和
 │
-│   P(x) = |αx|²
+├── subsystem 的完整 quantum state
+│   └── density matrix + partial trace
 │
-├── 不能直接把 amplitudes 相加
+├── local operation
+│   └── 只作用在部分 qubits
 │
-├── 如果只求 subsystem 的测量概率
-│   │
-│   └── |α|² → 概率 → 对其他 qubits 求和
+├── 整体 operation
+│   └── 例如 U ⊗ I ⊗ I
 │
-└── 如果要完整描述 subsystem 的 quantum state
-    │
-    └── density matrix + partial trace
+└── quantum circuit
+    └── 多个 unitary operations 随时间作用在 qubits 上
 
-最重要的三句话：
+最重要的几点：
 
-1. Quantum state 中存的是 probability amplitude，不是 probability。
+1. Quantum state 中存的是 probability amplitude，而不是 probability。
 
-2. 如果只求 subsystem 的测量概率分布，要先对 amplitude 取模平方，再对不关心的 qubits 求和。
+2. amplitude 不能像 classical probability 一样直接相加。
 
-3. 如果要完整表示 subsystem 的量子态，则需要 density matrix 和 partial trace，而不只是概率分布。
+3. 如果只求 subsystem 的测量概率分布：先取模平方，再对不关心的 qubits 求和。
+
+4. 如果要完整表示 subsystem 的 quantum state：使用 density matrix 和 partial trace。
+
+5. 对 subsystem 的 quantum gate 仍然属于整体系统的 unitary evolution，例如 U ⊗ I ⊗ I。
+
+6. Quantum circuit 就是把这些 unitary operations 按时间顺序作用在不同 qubits 上。

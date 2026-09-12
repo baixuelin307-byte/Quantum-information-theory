@@ -3,7 +3,6 @@ SOURCE：
 https://cleve.iqc.uwaterloo.ca/resources/QIC-710-F26/Qic710LectureNotes2026V2.pdf
 
 
-# Quantum Information Theory Notes
 
 这是本人在学习 **Quantum Information Theory / Quantum Communication** 过程中整理的一些个人笔记。
 

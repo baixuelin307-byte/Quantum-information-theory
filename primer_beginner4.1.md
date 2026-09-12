@@ -22,10 +22,9 @@ $|-\rangle=\frac{1}{\sqrt{2}}|0\rangle-\frac{1}{\sqrt{2}}|1\rangle$
 
 写成二维向量：
 
-$|+\rangle=\frac{1}{\sqrt{2}}\begin{bmatrix}1\\1\end{bmatrix}$
+$|+\rangle=\frac{1}{\sqrt{2}}(1,1)$
 
-$|-\rangle=\frac{1}{\sqrt{2}}\begin{bmatrix}1\\-1\end{bmatrix}$
-
+$|-\rangle=\frac{1}{\sqrt{2}}(1,-1)$
 因此在二维图中：
 
 - $|+\rangle$：右上方向
@@ -312,10 +311,10 @@ $\frac{\pi}{8}=22.5^\circ$
 
 所以：
 
-- $|\psi_0\rangle$：$-22.5^\circ$
-- $|\psi_1\rangle$：$67.5^\circ$
-- $|0\rangle$：$0^\circ$
-- $|+\rangle$：$45^\circ$
+- ψ₀：-22.5°
+- ψ₁：67.5°
+- |0⟩：0°
+- |+⟩：45°
 
 几何关系：
 

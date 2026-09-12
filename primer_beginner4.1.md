@@ -100,11 +100,22 @@ $|0\rangle$ 或 $|+\rangle$
 
 其中：
 
-$|0\rangle=\begin{bmatrix}1\\0\end{bmatrix}$
-
-而：
-
-$|+\rangle=\frac{1}{\sqrt{2}}\begin{bmatrix}1\\1\end{bmatrix}$
+$$
+|0\rangle=
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}
+$$
+而
+$$
+|+\rangle=
+\frac{1}{\sqrt{2}}
+\begin{bmatrix}
+1\\
+1
+\end{bmatrix}
+$$
 
 在二维图中：
 

@@ -6,16 +6,7 @@ https://cleve.iqc.uwaterloo.ca/resources/QIC-710-F26/Qic710LectureNotes2026V2.pd
 
 这是本人在学习 **Quantum Information Theory / Quantum Communication** 过程中整理的一些个人笔记。
 
-主要内容包括：
 
-- qubit 的基本概念
-- probability amplitude 与 phase
-- superposition
-- unitary operation
-- quantum measurement
-- state distinguishing
-- qubit 与 classical bit 的比较
-- trit communication 等相关内容
 
 这些内容主要用于个人学习、复习和理解量子通信中的基础概念。
 

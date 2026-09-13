@@ -1,4 +1,4 @@
-、# 6.8 Controlled-\(U\) Gates
+# 6.8 Controlled-\(U\) Gates
 
 ## 1. 什么是 Controlled-\(U\) Gate
 

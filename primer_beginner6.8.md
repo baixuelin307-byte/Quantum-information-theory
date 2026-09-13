@@ -78,6 +78,7 @@ H|0\rangle
 $$
 
 这时候 target 会进入 superposition。
+
 因此：
 
 $$
